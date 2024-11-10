@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { Patient } from '../../model/Patient';
 
 @Component({
   selector: 'app-patient-manage',
@@ -13,17 +14,22 @@ import Swal from 'sweetalert2';
 })
 export class PatientManageComponent {
 
-  public patientList:any=[];
+  public patientList:Patient[] =[];
 
   constructor(private http:HttpClient){
    this.loadPatient();
   }
 
   loadPatient(){
-    this.http.get("http://localhost:8080/patient/get-all").subscribe(data=>{
-      console.log(data);
-      this.patientList=data;
+    this.http.get<Patient[]>("http://localhost:8080/patient/get-all").subscribe(data=>{
+      data.forEach(obj=>{
+        console.log(obj);
+        this.patientList.push(obj);
+      })
     })
+
+    console.log(this.patientList);
+    
   }
 
   deletePatient(id:any){
