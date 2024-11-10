@@ -1,60 +1,123 @@
-<div class="flex-shrink-0 p-3 bg-danger-subtle" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
-      <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-5 fw-semibold">Collapsible</span>
-    </a>
-    <ul class="list-unstyled ps-0">
-      <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Home
-        </button>
-        <div class="collapse show" id="home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Dashboard
-        </button>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" routerLink="patient" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Patient Manage</a></li>
-            <li><a href="#" routerLink="appointment" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Appointment Manage</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Orders
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="border-top my-3"></li>
-      <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          Account
-        </button>
-        <div class="collapse" id="account-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
+<div id="sidebar" class="d-flex flex-column flex-shrink-0 ">
+  <div id="sidebar" class="d-flex flex-column p-3" style="width: 280px;">
+      <!-- <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32">
+              <use xlink:href="#bootstrap" />
+          </svg>
+          <span class="fs-4">Sidebar</span>
+      </a> -->
+      <div class="logo-box">
+          Medix
+      </div>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+              <a href="#" class="nav-link link-light" aria-current="page">
+                  <svg class="bi me-2" width="16" height="16">
+                      <use xlink:href="#home" />
+                  </svg>
+                  <i class="bi bi-house-heart-fill me-2"></i> Home
+                  <hr class="dropdown-divider">
+              </a>
+          </li>
+          <li>
+              <a href="#items-submenu-pat" routerLink="view-patient" class="nav-link link-light btn btn-toggle align-items-center rounded collapsed"
+                 data-bs-toggle="collapse" aria-expanded="false" id="nav-patients">
+                  <svg class="bi me-2" width="16" height="16">
+                      <use xlink:href="#table" />
+                  </svg>
+                  <i class="bi bi-people-fill me-2"></i>Patients
+                  <hr class="dropdown-divider">
+              </a>
+              <ul class="collapse btn-toggle-nav list-unstyled fw-normal pb-1 small" id="items-submenu-pat">
+                  <li class="nav-item" id="liViewPatient">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>View patient</a>
+                  </li>
+                  <li class="nav-item" id="liAddPatient">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>Add patient</a>
+                  </li>
+                  <li class="nav-item" id="liUpdatePatient">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>Update patient</a>
+                  </li>
+                  <li class="nav-item" id="liDeletePatient">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>Delete patient</a>
+                  </li>
+              </ul>
+          </li>
+          
+          <li>
+              <a href="#items-submenu-apo" class="nav-link link-light btn btn-toggle align-items-center rounded collapsed"
+                  data-bs-toggle="collapse" aria-expanded="false" id="nav-appointments">
+                  <svg class="bi me-2" width="16" height="16">
+                      <use xlink:href="#table" />
+                  </svg>
+                  <i class="bi bi-file-earmark-post me-2"></i>Appointments
+                  <hr class="dropdown-divider">
+              </a>
+              <ul class="collapse btn-toggle-nav list-unstyled fw-normal pb-1 small" id="items-submenu-apo">
+                  <li class="nav-item" id="liViewAppointment">
+                      <a href="#" routerLink="appointment" class="nav-link link-dark"><span class="separator">|</span>View appointments</a>
+                  </li>
+                  <li class="nav-item" id="liAddAppointment">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>Add appointments</a>
+                  </li>
+                  <li class="nav-item" id="liUpdateAppointment">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>Update appointments</a>
+                  </li>
+                  <li class="nav-item" id="liDeleteAppointment">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>Delete appointments</a>
+                  </li>
+              </ul>
+          </li>
+
+          <li>
+              <a href="#" class="nav-link link-light">
+                  <svg class="bi me-2" width="16" height="16">
+                      <use xlink:href="#grid" />
+                  </svg>
+                  <i class="bi bi-person-workspace me-2"></i>Doctors
+                  <hr class="dropdown-divider">
+              </a>
+          </li>
+
+          <li>
+              <a href="#" routerLink="medical-records" class="nav-link link-light">
+                  <svg class="bi me-2" width="16" height="16">
+                      <use xlink:href="#grid" />
+                  </svg>
+                  <i class="bi bi-file-earmark-ppt-fill me-2"></i>Prescription
+                  <hr class="dropdown-divider">
+              </a>
+          </li>
+
+          <li>
+              <a href="#items-submenu-category"
+                  class="nav-link link-light btn btn-toggle align-items-center rounded collapsed"
+                  data-bs-toggle="collapse" aria-expanded="false" id="nav-category">
+                  <svg class="bi me-2" width="16" height="16">
+                      <use xlink:href="#table" />
+                  </svg>
+                  <i class="bi bi-bookmarks-fill me-2"></i>Category
+                  <hr class="dropdown-divider">
+              </a>
+              <ul class="collapse btn-toggle-nav list-unstyled fw-normal pb-1 small" id="items-submenu-category">
+                  <li class="nav-item" id="liViewCategory">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>View category</a>
+                  </li>
+                  <li class="nav-item" id="liAddCategory">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>Add category</a>
+                  </li>
+                  <li class="nav-item" id="liUpdateCategory">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>Update category</a>
+                  </li>
+                  <li class="nav-item" id="liDeleteCategory">
+                      <a href="#" class="nav-link link-dark"><span class="separator">|</span>Delete category</a>
+                      
+                  </li>
+              </ul>
+          </li>
+
+      </ul>
+      <h5 id="log-out"><i class="bi bi-box-arrow-right ms-5 me-2"></i>log out</h5>
   </div>
+</div>

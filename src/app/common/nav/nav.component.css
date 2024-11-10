@@ -1,0 +1,112 @@
+#sidebar {
+    background-color: #38823E; 
+    color: white;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+#sidebar a {
+    color: white; 
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#sidebar a.active {
+    background-color: #6dbe74; 
+    
+}
+
+#sidebar a:hover {
+    color: #6dbe74; 
+    background-color: #ffffff3c; 
+    width: 100%;
+
+    
+}
+
+#sidebar svg {
+    fill: white; 
+}
+
+#sidebar a.active svg, 
+#sidebar a:hover svg {
+    fill: #6dbe74;
+}
+#nav-appointments {
+    text-align: left;  
+}
+
+#items-submenu-apo {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#items-submenu-apo a {
+    display: block;
+    width: max-content; 
+    margin-right: 0;
+    color: #38823E; 
+}
+#nav-category {
+    text-align: left; 
+}
+
+#items-submenu-category {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#items-submenu-category a {
+    display: block;
+    width: max-content; 
+    margin-right: 0;
+    color: #38823E; 
+}
+#nav-patients {
+    text-align: left; 
+}
+
+#items-submenu-pto {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#items-submenu-pto a {
+    display: block;
+    width: max-content; 
+    margin-right: 0;
+    color: #38823E; 
+}
+#log-out{
+    align-items: end;
+}
+.dropdown-divider {
+    border-top: 1px solid #38823E;
+    margin: 0; 
+    padding-top: 5%;
+}
+.separator {
+    margin-right: 0.5rem; 
+    color: #38823E; 
+    font-weight: bold; 
+}
+.logo-box {
+    background: linear-gradient(360deg, #80CD84,#BFE6C1, #E6FFE8);
+    color: #38823E;
+    font-size: xx-large; 
+    width: 120%;
+    height: 15%;
+    text-align: center; 
+    padding: 1rem; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.248); 
+    border-radius: 5vw 0 0 5vw ;
+}
+#sidebar{
+    border-radius: 0 0 10% 0;
+}
